@@ -1,0 +1,62 @@
+  
+  /* Import MS Pac-Man style font */
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  /* Minimal password screen aesthetic */
+.password-page {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive; /* still has the game feel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 1rem; /* smaller spacing between elements */
+  }
+  
+  .password-page h1 {
+    font-size: 1.2rem; /* smaller, softer look */
+    font-weight: normal;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  
+  .password-input-container {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    max-width: 260px;
+    width: 100%;
+  }
+  
+  .password-input-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.4rem;
+    background: transparent;
+    color: #fff;
+    font-size: 0.8rem;
+  }
+  
+  .password-input-container input::placeholder {
+    color: #888;
+  }
+  
+  .password-input-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 0.4rem;
+  }
+  
+  .password-input-container button:hover {
+    color: #ccc;
+  }
+  

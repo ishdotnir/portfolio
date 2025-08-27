@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product design + UX writing challenge · Ishita Nirbhavne</title>
+  <meta name="description" content="When I was applying to UX internships, I wanted to get better at holistic UX. I started iterating on the prompts from uxwritingchallenge.com." />
+  <link rel="icon" href="favicon.svg" />
+  <meta name="color-scheme" content="dark">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7&display=swap">
+  <link rel="preconnect" href="https://rsms.me/" crossorigin>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific CSS -->
+  <style>
+    /* Intro */
+    .challenge-intro { 
+      text-align:left; 
+      max-width: min(100%, var(--max)); 
+      margin: 0 auto; 
+    }
+    .challenge-intro p { color: var(--muted); font-size: var(--lead); }
+    .challenge-intro .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Layout */
+    .challenge-layout{
+      display:grid;
+      grid-template-columns: max-content 1fr;
+      gap: clamp(16px, 2vw, 24px);
+      align-items:start;
+    }
+
+    /* Sidebar nav */
+    .challenge-nav{
+      position: sticky;
+      top: 96px;
+      align-self:start;
+      display:grid;
+      gap: 10px;
+      justify-items: start;
+    }
+    .challenge-nav a{
+      display:inline-block;
+      width: auto;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: color-mix(in oklab, var(--bg), #000 0%);
+      color: var(--text);
+      text-decoration: none;
+      font: 600 1rem/1.2 var(--font-heading);
+      letter-spacing: .01em;
+      transition: background .2s ease, border-color .2s ease, transform .15s ease;
+    }
+    .challenge-nav a:hover,
+    .challenge-nav a:focus-visible{
+      background: rgba(255,255,255,.06);
+      outline: none;
+      transform: translateY(-1px);
+    }
+    .challenge-nav a.is-active{
+      border-color: color-mix(in oklab, var(--accent), white 18%);
+      box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent), white 24%);
+    }
+
+    /* Content area */
+    .challenge-content{ display:grid; gap: clamp(24px, 2.8vw, 40px); }
+    .prompt{ scroll-margin-top: 96px; }
+
+    /* Image */
+    .prompt-figure{ margin: 0; }
+    .prompt-figure img{
+      width: min(58vw, 900px);
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-inline: 0;
+      border-radius: 12px;
+    }
+    /* Extra space between Sign-in errors images */
+    #p5 .prompt-figure img:first-of-type {
+      margin-bottom: 20px;
+    }
+    .img-credit{
+      text-align:left;
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .challenge-layout{ grid-template-columns: 1fr; }
+      .challenge-nav{
+        position: static;
+        grid-template-columns: repeat(3, max-content);
+        gap: 8px 10px;
+      }
+      .prompt-figure img{
+        width: min(96vw, 720px);
+        margin-inline: auto;
+      }
+      .img-credit{ text-align:center; }
+    }
+    @media (max-width: 560px){
+      .challenge-nav{ grid-template-columns: repeat(2, max-content); }
+    }
+
+    /* Back-to-top */
+    #backToTop {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 9999;
+    }
+    #backToTop:hover { background: color-mix(in oklab, var(--accent), white 15%); }
+    #backToTop.show { opacity: 1; visibility: visible; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/" aria-label="Home">Ishita Nirbhavne</a>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Intro -->
+    <section class="section">
+      <div class="container narrow challenge-intro">
+        <p class="eyebrow">Early Work</p>
+        <h1 class="headline">Product design + UX writing prompts</h1>
+        <p>Ten quick prompts that sharpened my product instincts: from uxwritingchallenge.com</p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="section">
+      <div class="container challenge-layout">
+        <!-- Nav -->
+        <nav class="challenge-nav" aria-label="Challenge prompts">
+          <a href="#p1">Flight update</a>
+          <a href="#p2">Emergency alert</a>
+          <a href="#p3">Concert promotion</a>
+          <a href="#p4">Payment page</a>
+          <a href="#p5">Sign-in errors</a>
+          <a href="#p6">Delivery deal</a>
+          <a href="#p7">Progress lost</a>
+        </nav>
+
+        <!-- Content -->
+        <div class="challenge-content">
+          <!-- P1 -->
+          <article id="p1" class="prompt">
+            <figure class="prompt-figure">
+              <img src="Screenshot 2022-10-05 at 7.18.08 PM.png" alt="Flight update design" loading="lazy" decoding="async">
+              <figcaption class="img-credit">Icons courtesy of Phosphor &amp; Remix Icon.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P2 -->
+          <article id="p2" class="prompt">
+            <figure class="prompt-figure">
+              <img src="Screenshot 2022-10-06 at 9.43.27 PM.png" alt="Emergency alert design" loading="lazy" decoding="async">
+              <figcaption class="img-credit">Placeholder image &amp; icons for layout preview.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P3 -->
+          <article id="p3" class="prompt">
+            <figure class="prompt-figure">
+              <img src="Screenshot 2022-10-06 at 9.43.05 PM.png" alt="Concert promotion design" loading="lazy" decoding="async">
+              <figcaption class="img-credit">Placeholder image &amp; icons for layout preview.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P4 -->
+          <article id="p4" class="prompt">
+            <figure class="prompt-figure">
+              <img src="Screenshot 2022-10-09 at 7.22.51 PM.png" alt="Payment page design" loading="lazy" decoding="async">
+              <figcaption class="img-credit">Placeholder image &amp; icons for layout preview.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P5 -->
+          <article id="p5" class="prompt">
+            <figure class="prompt-figure">
+              <img src="Screenshot 2022-10-09 at 7.24.38 PM.png" alt="Sign-in errors design" loading="lazy" decoding="async">
+              <img src="Screenshot 2022-10-21 at 7.04.46 PM.png" alt="Sign-in errors design variation" loading="lazy" decoding="async">
+              <figcaption class="img-credit">Placeholder image &amp; icons for layout preview.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P6 -->
+          <article id="p6" class="prompt">
+            <figure class="prompt-figure">
+              <img src="Screenshot 2022-09-30 at 1.02.40 AM.png" alt="Delivery deal design" loading="lazy" decoding="async">
+              <figcaption class="img-credit">Placeholder image &amp; icons for layout preview.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P7 -->
+          <article id="p7" class="prompt">
+            <figure class="prompt-figure">
+              <img src="Screenshot 2022-10-02 at 1.49.45 PM.png" alt="Progress lost design" loading="lazy" decoding="async">
+              <figcaption class="img-credit">Placeholder image &amp; icons for layout preview.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> Ishita Nirbhavne.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) backToTopBtn.classList.add("show");
+      else backToTopBtn.classList.remove("show");
+    });
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const sections = [...document.querySelectorAll(".prompt")];
+    const links = [...document.querySelectorAll(".challenge-nav a")];
+    const byId = id => links.find(a => a.getAttribute("href") === "#" + id);
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const l = byId(entry.target.id);
+        if (!l) return;
+        if (entry.isIntersecting) {
+          links.forEach(a => a.classList.remove("is-active"));
+          l.classList.add("is-active");
+        }
+      });
+    }, { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0.01 });
+
+    sections.forEach(s => io.observe(s));
+  </script>
+</body>
+</html>

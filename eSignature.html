@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eSignature - Ishita Nirbhavne</title>
+  <meta name="description" content="Case study for eSignature (Intuit) by Ishita." />
+  <link rel="icon" href="favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7&display=swap">
+  <link rel="preconnect" href="https://rsms.me/" crossorigin>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">Ishita Nirbhavne</a>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section case-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Case study</p>
+        <h1 class="headline">eSignature</h1>
+        <p class="subhead">
+          Imagine: You're an employer who wants their employee to sign several documents at once. You add all the relevant documents to 1 folder and add the employee as a signee. They log in and sign the required documents in record time.
+          The eSignature tool provides a platform-level capability for users to sign documents quickly and efficiently.
+        </p>
+
+        <ul class="meta">
+          <li><strong>Role:</strong> Content Designer, UX Strategist</li>
+          <li><strong>Company:</strong> Intuit</li>
+          <li><strong>Timeline:</strong> Feb 2024 - March 2024</li>
+          <li><strong>Team:</strong> 1 PM · 1 PD · 1 Researcher</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <figure class="hero-img">
+          <img src="https://picsum.photos/seed/cover/1600/900" alt="Hero mockup for eSignature" />
+          <figcaption>High-level overview of the final solution.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PROCESS (left sticky nav + right content) -->
+    <section class="section process">
+      <div class="container narrow process-wrap">
+        <!-- LEFT: sticky process title + steps -->
+        <aside class="process-nav">
+          <h2 class="section-title">Process</h2>
+          <ol class="process-steps">
+            <li><a href="#research">Research</a></li>
+            <li><a href="#content-ia">Content & IA</a></li>
+            <li><a href="#design">Design</a></li>
+            <li><a href="#validation">Validation</a></li>
+          </ol>
+        </aside>
+
+        <!-- RIGHT: detailed content -->
+        <div class="process-content">
+          <section id="research" class="process-block">
+            <h3>Research</h3>
+            <p>Interviews, support ticket review, funnel analysis.</p>
+            <figure class="process-media">
+              <img src="https://picsum.photos/seed/research/1600/1000" alt="Research artifacts" />
+              <figcaption>User quotes, top issues, and time-to-complete baselines.</figcaption>
+            </figure>
+          </section>
+
+          <section id="content-ia" class="process-block">
+            <h3>Content &amp; IA</h3>
+            <p>Information architecture, taxonomy, naming, error copy.</p>
+            <figure class="process-media">
+              <img src="https://picsum.photos/seed/ia/1600/1000" alt="Sitemaps and IA diagrams" />
+              <figcaption>Flows, states, and content patterns aligned across teams.</figcaption>
+            </figure>
+          </section>
+
+          <section id="design" class="process-block">
+            <h3>Design</h3>
+            <p>Wireframes → hi-fi screens, states, and flows.</p>
+            <figure class="process-media">
+              <img src="https://picsum.photos/seed/design/1600/1000" alt="Design mockups" />
+              <figcaption>Interaction principles and component specs.</figcaption>
+            </figure>
+          </section>
+
+          <section id="validation" class="process-block">
+            <h3>Validation</h3>
+            <p>Usability testing, copy tests, shipping with metrics.</p>
+            <figure class="process-media">
+              <img src="https://picsum.photos/seed/validation/1600/1000" alt="Usability testing snapshots" />
+              <figcaption>Before/after metrics and qualitative insights.</figcaption>
+            </figure>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- /PROCESS -->
+
+    <section class="section">
+      <div class="container narrow prose">
+        <h2>Outcomes</h2>
+        <ul>
+          <li><strong>+17% activation</strong> within 28 days of launch.</li>
+          <li><strong>−32% payment-related tickets</strong> in Q2.</li>
+          <li>Shipped a <strong>content pattern library</strong> for error states and empty states.</li>
+        </ul>
+        <p class="note">*Replace these with your real numbers and timeframes.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container nextprev">
+        <a class="btn" href="/">← Back to all work</a>
+        <a class="btn ghost" href="project.html?case=next">Next project →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> [Your Name].</p>
+    </div>
+  </footer>
+
+  <!-- Scrollspy -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll(".process-block");
+      const navLinks = document.querySelectorAll(".process-steps li a");
+
+      function onScroll() {
+        let current = "";
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120; // adjust for sticky header
+          if (window.pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").slice(1) === current) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", onScroll);
+      onScroll(); // initialize on load
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
