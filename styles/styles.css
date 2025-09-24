@@ -30,7 +30,7 @@
     --transition: all 0.2s ease;
   }
   
-  /* Dark mode (optional) */
+  /* Force dark mode for all users */
   @media (prefers-color-scheme: light) {
     :root {
       --bg: #0F0F0F;
@@ -51,6 +51,7 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scroll-padding-top: 80px; /* Account for fixed header */
   }
   
   body {
@@ -233,6 +234,7 @@
     margin-bottom: var(--space-lg);
     font-weight: 700;
     max-width: 800px;
+    color: #A3174F;
   }
   
   .subhead {
@@ -306,7 +308,8 @@
   
   /* ===== CONTACT SECTION ===== */
   .contact {
-    background: var(--accent-light);
+    background: var(--bg);
+    padding: var(--space-2xl) 0;
   }
   
   .contact-inner {
@@ -316,38 +319,42 @@
   }
   
   .contact h2 {
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
   }
   
   .contact-lede {
     font-size: 18px;
     color: var(--text-muted);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
   
   .contact-list {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
+    align-items: center;
   }
   
   .contact-list a {
-    display: inline-block;
-    padding: var(--space-md) var(--space-lg);
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    box-shadow: var(--shadow);
+    color: var(--text);
   }
   
   .contact-list a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: var(--accent);
     opacity: 1;
+  }
+  
+  .linkedin-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
   }
   
   @media (max-width: 640px) {
@@ -361,7 +368,7 @@
   .site-footer {
     border-top: 1px solid var(--line);
     padding: var(--space-xl) 0;
-    margin-top: var(--space-3xl);
+    margin-top: var(--space-xl);
   }
   
   .footer-inner {

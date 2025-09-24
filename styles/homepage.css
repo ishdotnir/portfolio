@@ -7,25 +7,34 @@
     right: 20px;
     background: var(--text);
     color: var(--bg);
-    padding: 10px 12px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     font-size: 20px;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
     z-index: 999;
     transition: all 0.3s ease;
-    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .back-to-top-icon:hover {
     background: var(--accent);
     transform: translateY(-2px);
-    opacity: 1;
+    box-shadow: 0 6px 25px rgba(255, 107, 107, 0.3);
   }
   
   /* Hero intro text styling */
   .hero-intro {
     color: var(--text);
+  }
+  
+  /* ===== CONTACT SECTION SPACING ===== */
+  .contact-reduced-spacing {
+    padding: var(--space-xl) 0;
+    margin-top: 0;
   }
   
   /* ===== TILE GRID SYSTEM ===== */
@@ -147,14 +156,24 @@
     border-top: 1px solid var(--line);
   }
   
-  .playground .section-header {
-    text-align: center;
+  #playground .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: left;
   }
   
-  .playground .section-kicker {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+  #playground .section-header h2 {
+    margin: 0;
+  }
+  
+  #playground .section-kicker {
+    margin-top: 0;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: right;
+    flex-shrink: 0;
   }
   
   .playground .tile {
@@ -184,13 +203,15 @@
       font-size: 12px;
     }
     
-    .work .section-header {
+    .work .section-header,
+    #playground .section-header {
       flex-direction: column;
       align-items: flex-start;
       gap: var(--space-sm);
     }
     
-    .work .section-kicker {
+    .work .section-kicker,
+    #playground .section-kicker {
       text-align: left;
     }
   }
@@ -207,7 +228,8 @@
     .back-to-top-icon {
       bottom: 16px;
       right: 16px;
-      padding: 8px 10px;
+      width: 44px;
+      height: 44px;
       font-size: 18px;
     }
   }
@@ -246,7 +268,7 @@
       background: linear-gradient(135deg, var(--accent), transparent);
       opacity: 0;
       transition: opacity 0.3s ease;
-      border-radius: 8px;
+      border-radius: 0;
       pointer-events: none;
     }
     

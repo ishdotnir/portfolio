@@ -8,76 +8,15 @@
   <link rel="icon" href="favicon.svg" />
   <meta name="color-scheme" content="dark">
 
-  <!-- Fonts (same as other pages) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7&display=swap">
   <link rel="preconnect" href="https://rsms.me/" crossorigin>
   <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Page-specific CSS (reuses exact patterns from the challenge page) -->
-  <style>
-    /* Intro */
-    .challenge-intro{ text-align:left; max-width:min(100%,var(--max)); margin:0 auto; }
-    .challenge-intro p{ color:var(--muted); font-size:var(--lead); }
-    .challenge-intro .eyebrow{ font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); display:block; margin-bottom:8px; }
-
-    /* Layout */
-    .challenge-layout{ display:grid; grid-template-columns:max-content 1fr; gap:clamp(16px,2vw,24px); align-items:start; }
-
-    /* Sidebar nav (hug text) */
-    .challenge-nav{ position:sticky; top:96px; align-self:start; display:grid; gap:10px; justify-items:start; }
-    .challenge-nav a{
-      display:inline-block; width:auto; padding:8px 14px;
-      border-radius:8px; border:1px solid var(--line);
-      background:color-mix(in oklab,var(--bg),#000 0%); color:var(--text);
-      text-decoration:none; font:600 1rem/1.2 var(--font-heading); letter-spacing:.01em;
-      transition:background .2s ease, border-color .2s ease, transform .15s ease;
-    }
-    .challenge-nav a:hover, .challenge-nav a:focus-visible{ background:rgba(255,255,255,.06); outline:none; transform:translateY(-1px); }
-    .challenge-nav a.is-active{ border-color:color-mix(in oklab,var(--accent),white 18%); box-shadow:0 0 0 2px color-mix(in oklab,var(--accent),white 24%); }
-
-    /* Content area */
-    .challenge-content{ display:grid; gap:clamp(24px,2.8vw,40px); }
-    .prompt{ scroll-margin-top:96px; }
-
-    /* “Figure” wrapper + PDF frame matches image sizing */
-    .prompt-figure{ margin:0; }
-    .pdf-frame{
-      width:min(58vw,900px); max-width:100%; margin-inline:0;
-      border-radius:12px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow);
-      background:#000;
-      aspect-ratio: 16 / 10; /* friendly ratio; viewer is responsive */
-      display:block;
-    }
-    .pdf-frame iframe, .pdf-frame embed, .pdf-frame object{
-      width:100%; height:100%; display:block; border:0;
-      background:#000;
-    }
-    .img-credit{ text-align:left; color:var(--muted); font-size:.9rem; margin-top:8px; }
-
-    /* Responsive */
-    @media (max-width:980px){
-      .challenge-layout{ grid-template-columns:1fr; }
-      .challenge-nav{ position:static; grid-template-columns:repeat(3,max-content); gap:8px 10px; }
-      .pdf-frame{ width:min(96vw,720px); margin-inline:auto; }
-      .img-credit{ text-align:center; }
-    }
-    @media (max-width:560px){
-      .challenge-nav{ grid-template-columns:repeat(2,max-content); }
-    }
-
-    /* Back-to-top */
-    #backToTop{
-      position:fixed; bottom:24px; right:24px; background:var(--accent); color:#fff; border:none; border-radius:50%;
-      width:44px; height:44px; font-size:1.4rem; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.25);
-      opacity:0; visibility:hidden; transition:opacity .3s ease, visibility .3s ease; z-index:9999;
-    }
-    #backToTop:hover{ background:color-mix(in oklab,var(--accent),white 15%); }
-    #backToTop.show{ opacity:1; visibility:visible; }
-  </style>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/printdesign.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -90,6 +29,7 @@
           <li><a href="/#work">Work</a></li>
           <li><a href="/#about">About</a></li>
           <li><a href="/#contact">Contact</a></li>
+          <li><a href="/#playground">Playground</a></li>
         </ul>
       </nav>
     </div>
@@ -97,32 +37,31 @@
 
   <main id="main">
     <!-- Intro -->
-    <section class="section">
-      <div class="container narrow challenge-intro">
-        <span class="eyebrow">Early Work</span>
+    <section class="section print-hero">
+      <div class="container narrow print-intro">
+        <p class="eyebrow">Early Work</p>
         <h1 class="headline">Print design</h1>
-        <p>Three layout studies from media school: a broadsheet, a tabloid, and a magazine spread.</p>
+        <p class="subhead">Three layout studies from media school: a broadsheet, a tabloid, and a magazine spread.</p>
       </div>
     </section>
 
     <!-- Layout -->
     <section class="section">
-      <div class="container challenge-layout">
+      <div class="container print-layout">
         <!-- Nav -->
-        <nav class="challenge-nav" aria-label="InDesign studies">
+        <nav class="print-nav" aria-label="InDesign studies">
           <a href="#p1">Broadsheet</a>
           <a href="#p2">Tabloid</a>
           <a href="#p3">Magazine</a>
         </nav>
 
         <!-- Content -->
-        <div class="challenge-content">
+        <div class="print-content">
           <!-- Broadsheet -->
           <article id="p1" class="prompt">
             <figure class="prompt-figure" aria-label="Broadsheet PDF preview">
               <a href="BROADSHEET.pdf" target="_blank" rel="noopener" aria-label="Open broadsheet PDF in a new tab">
                 <div class="pdf-frame">
-                  <!-- Replace broadsheet.pdf with your actual file path -->
                   <iframe src="broadsheet.pdf#view=FitH" title="Broadsheet PDF" loading="lazy"></iframe>
                 </div>
               </a>
@@ -135,7 +74,6 @@
             <figure class="prompt-figure" aria-label="Tabloid PDF preview">
               <a href="IshitaMumbaiVariety.pdf" target="_blank" rel="noopener" aria-label="Open tabloid PDF in a new tab">
                 <div class="pdf-frame">
-                  <!-- Replace tabloid.pdf with your actual file path -->
                   <iframe src="IshitaMumbaiVariety.pdf#view=FitH" title="Tabloid PDF" loading="lazy"></iframe>
                 </div>
               </a>
@@ -148,7 +86,6 @@
             <figure class="prompt-figure" aria-label="Magazine PDF preview">
               <a href="IshitaMagazine.pdf" target="_blank" rel="noopener" aria-label="Open magazine PDF in a new tab">
                 <div class="pdf-frame">
-                  <!-- Replace magazine.pdf with your actual file path -->
                   <iframe src="IshitaMagazine.pdf#view=FitH" title="Magazine PDF" loading="lazy"></iframe>
                 </div>
               </a>
@@ -162,14 +99,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year">2025</span> Ishita Nirbhavne.</p>
+      <p>© <span id="year">2025</span> Ishita Nirbhavne. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Back to Top -->
   <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- JS: year, scrollspy, back-to-top -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -185,7 +121,7 @@
 
     // Active nav
     const sections = [...document.querySelectorAll(".prompt")];
-    const links = [...document.querySelectorAll(".challenge-nav a")];
+    const links = [...document.querySelectorAll(".print-nav a")];
     const byId = id => links.find(a => a.getAttribute("href") === "#" + id);
 
     const io = new IntersectionObserver((entries) => {

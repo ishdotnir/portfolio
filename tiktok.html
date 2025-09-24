@@ -4,9 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TikTok — Product Infrastructure · Ishita Nirbhavne</title>
-  <meta name="description" content="Overview of Ishita Nirbhavne’s work on Product Infrastructure at TikTok." />
-  <link rel="icon" href="favicon.svg" />
-  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Overview of Ishita Nirbhavne's work on Product Infrastructure at TikTok." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -14,13 +12,9 @@
   <link rel="preconnect" href="https://rsms.me/" crossorigin>
   <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
 
-  <!-- Enable safe reveal fallback -->
-  <script>document.documentElement.classList.add('js');</script>
-
-  <!-- Centered developer video (scoped + safe) -->
-
+  <link rel="stylesheet" href="styles/tiktok.css" />
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -41,7 +35,9 @@
     <section class="section case-hero">
       <div class="container narrow">
         <p class="eyebrow reveal">TikTok</p>
-        <h1 class="headline reveal reveal-up">Storytelling in UI</h1>
+        <h1 class="headline reveal reveal-up">
+          <span class="storytelling">Storytelling</span> in <span class="ui">UI</span>
+        </h1>
         <p class="subhead reveal">
           I've built several 0-1 products and features within the Product Infrastructure vertical at TikTok.
           Specific project artifacts are protected by NDA; below is a high-level overview and
@@ -64,12 +60,11 @@
     <!-- Flip Card Intro -->
     <section class="section">
       <div class="container narrow">
-        <div class="flip-card reveal" aria-live="polite" role="button" tabindex="0"
-             aria-controls="ttk-intro" aria-pressed="false" aria-label="Flip info card" title="Tap/click to flip">
+        <div class="flip-card reveal">
           <div class="flip-card__inner" id="ttk-intro">
             <article class="flip-card__face flip-card__face--front">
               <h2 class="flip-card__title">I'm a full-stack content designer at TikTok</h2>
-              <p class="flip-card__desc">I partner with product managers, product designers, and developers to craft content experiences, build scalable frameworks, and UX that scale across TikTok’s ecosystem.</p>
+              <p class="flip-card__desc">I partner with product managers, product designers, and developers to craft content experiences, build scalable frameworks, and UX that scale across TikTok's ecosystem.</p>
             </article>
             <article class="flip-card__face flip-card__face--back">
               <h2 class="flip-card__title">Why full-stack?</h2>
@@ -121,7 +116,7 @@
 
     <!-- TikTok Minis -->
     <section class="tiktok-minis" id="minis">
-      <div class="container wide">
+      <div class="container">
         <div class="tiktok-minis-text">
           <h2>TikTok Minis</h2>
           <p>
@@ -131,18 +126,14 @@
           </p>
         </div>
         <div class="tiktok-minis-content reveal">
-          <figure class="tiktok-minis-main-img">
-            <img
-              src="Group 2087326290.png"
-              alt="Layered breakdown: video cover image, mask with blur, gradient application, and top layer">
-          </figure>
+          <img src="Group 2087326290.png" alt="Layered breakdown: video cover image, mask with blur, gradient application, and top layer">
         </div>
       </div>
     </section>
 
     <!-- TikTok for Developers -->
     <section class="developers section" id="developers">
-      <div class="container wide">
+      <div class="container">
         <div class="developers-text">
           <h2 class="reveal">TikTok for Developers</h2>
           <p class="reveal">
@@ -159,32 +150,30 @@
 
     <!-- Account Security -->
     <section class="section" id="account-security">
-      <div class="container narrow prose" style="text-align:center;">
+      <div class="container account-security-text">
         <h2 class="reveal">Account Security</h2>
         <p class="reveal">
-          Getting locked out of your TikTok account? Not on our watch. If it happens, we’ll guide you back in with recovery options that are easy, safe, and made to keep you in control.
+          Getting locked out of your TikTok account? Not on our watch. If it happens, we'll guide you back in with recovery options that are easy, safe, and made to keep you in control.
         </p>
-      </div>
-      <div class="container wide">
         <div class="account-security-image reveal" aria-label="Account security demo">
-          <div class="account-security-main-img">
-            <img src="Group 2087326291.png" alt="Account recovery interface" loading="lazy" decoding="async">
-          </div>
+          <img src="Group 2087326291.png" alt="Account recovery interface" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
-    <!-- Callout -->
-    <section class="section" style="text-align:center; margin-top: 80px;">
+    <!-- Contact Callout -->
+    <section class="contact">
       <div class="container narrow">
-        <h2 style="margin-bottom: 12px;">Want to learn more?</h2>
-        <p style="color: var(--muted); margin-bottom: 20px;">
-          Project artifacts are protected by NDA — reach out to me directly to discuss my work further.
-        </p>
-        <ul class="contact-list" style="justify-content: center;">
-          <li><a href="mailto:your-email@example.com" class="contact-btn">Email Me</a></li>
-          <li><a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener" class="contact-btn">LinkedIn</a></li>
-        </ul>
+        <div class="contact-inner">
+          <h2>Want to learn more?</h2>
+          <p class="contact-lede">
+            Project artifacts are protected by NDA — reach out to me directly to discuss my work further.
+          </p>
+          <ul class="contact-list">
+            <li><a href="mailto:ishita.nir12@gmail.com">Email Me</a></li>
+            <li><a href="https://www.linkedin.com/in/ish-nir/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -199,7 +188,6 @@
   <!-- Back to Top -->
   <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- JS -->
   <script>
     // Year
     const yearEl = document.getElementById('year');
@@ -215,7 +203,7 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Reveal
+    // Reveal animations
     (function(){
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!prefersReduced && 'IntersectionObserver' in window) {
@@ -231,18 +219,6 @@
       } else {
         document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
       }
-    })();
-
-    // Flip card (click/Enter/Space)
-    (function(){
-      const card = document.querySelector('.flip-card');
-      if (!card) return;
-      const toggle = () => card.setAttribute('aria-pressed',
-        card.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-      card.addEventListener('click', toggle);
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-      });
     })();
   </script>
 </body>
