@@ -37,7 +37,7 @@
     <section class="section case-hero">
       <div class="container narrow">
         <p class="eyebrow reveal">Chegg</p>
-        <h1 class="headline reveal reveal-up">
+        <h1 class="headline reveal reveal-up" style="color: #eb7000;">
           Student-centered experience
         </h1>
         <p class="subhead reveal">
@@ -230,7 +230,7 @@
           <section class="case-study__section reveal">
             <h3 class="case-study__section-title">Context</h3>
             <div class="case-study__section-content">
-              <p>The Native team at Chegg developed 2 apps: Chegg Prep and Chegg Study for iOS & Android. I worked on several screens for Chegg’s apps and iterated on feature introductions, push notifications, widgets, and more.</p>
+              <p>The Native team at Chegg developed 2 apps: Chegg Prep and Chegg Study for iOS & Android. I worked on several screens for Chegg's apps and iterated on feature introductions, push notifications, widgets, and more.</p>
             </div>
           </section>
 
@@ -321,7 +321,7 @@
           <section class="case-study__section reveal">
             <h3 class="case-study__section-title">Context</h3>
             <div class="case-study__section-content">
-              <p>The UX team at Chegg didn’t have a consistent standard for content-heavy components like notifications, onboarding guides, or error messages. My manager asked me to explore a solution, so I began creating a style guide in Figma. This guide lives within the larger design system and gives designers ready-to-use components they can pull from directly. </p>
+              <p>The UX team at Chegg didn't have a consistent standard for content-heavy components like notifications, onboarding guides, or error messages. My manager asked me to explore a solution, so I began creating a style guide in Figma. This guide lives within the larger design system and gives designers ready-to-use components they can pull from directly. </p>
             </div>
           </section>
 
@@ -409,19 +409,14 @@
     </article>
 
     <!-- Contact Section -->
-    <section class="contact">
-      <div class="container narrow">
-        <div class="contact-inner">
-          <h2>Interested in the full case studies?</h2>
-          <p class="contact-lede">
-            These project overviews represent a snapshot of my work at Chegg. I'd be happy to discuss 
-            the detailed research methods, design decisions, and outcomes in more depth.
-          </p>
-          <ul class="contact-list">
-            <li><a href="mailto:ishita.nir12@gmail.com">Email Me</a></li>
-            <li><a href="https://www.linkedin.com/in/ish-nir/" target="_blank" rel="noopener">LinkedIn</a></li>
-          </ul>
-        </div>
+    <section id="contact" class="section contact contact-reduced-spacing">
+      <div class="container contact-inner">
+        <h2>Interested in the full case studies?</h2>
+        <p class="contact-lede">These project overviews represent a snapshot of my work at Chegg. I'd be happy to discuss the detailed research methods, design decisions, and outcomes in more depth.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:ishita.nir12@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/ish-nir/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
       </div>
     </section>
   </main>
@@ -432,23 +427,12 @@
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="backToTop" aria-label="Back to top">↑</button>
+  <a href="#top" class="back-to-top-icon" aria-label="Back to top">↑</a>
 
   <script>
     // Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    // Back to Top
-    const backToTopBtn = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) backToTopBtn.classList.add("show");
-      else backToTopBtn.classList.remove("show");
-    });
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
 
     // Reveal animations
     (function(){
