@@ -22,9 +22,10 @@
       <a class="logo" href="/">Ishita Nirbhavne</a>
       <nav class="nav" aria-label="Primary">
         <ul>
-          <li><a href="/#work">Work</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/index.html#work">Work</a></li>
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+          <li><a href="/index.html#playground">Playground</a></li>
         </ul>
       </nav>
     </div>
@@ -170,7 +171,7 @@
             Project artifacts are protected by NDA — reach out to me directly to discuss my work further.
           </p>
           <ul class="contact-list">
-            <li><a href="mailto:ishita.nir12@gmail.com">Email Me</a></li>
+            <li><a href="mailto:ishita.nir12@gmail.com">Email</a></li>
             <li><a href="https://www.linkedin.com/in/ish-nir/" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
@@ -185,23 +186,12 @@
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="backToTop" aria-label="Back to top">↑</button>
+  <a href="#top" class="back-to-top-icon" aria-label="Back to top">↑</a>
 
   <script>
     // Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    // Back to Top
-    const backToTopBtn = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) backToTopBtn.classList.add("show");
-      else backToTopBtn.classList.remove("show");
-    });
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
 
     // Reveal animations
     (function(){
