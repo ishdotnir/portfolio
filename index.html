@@ -17,7 +17,7 @@
     :root {
         /* Colors - Dark Mode */
         --bg: #0F0F0F;
-        --text: #F5F5F5;
+        --text: #FFFFFF;
         --text-muted: #999;
         --line: #2A2A2A;
         --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -164,10 +164,10 @@
         top: 0;
         left: 0;
         right: 0;
-        background: rgba(15, 15, 15, 0.8);
+        background: rgba(0, 0, 0, 1);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid #222222;
         z-index: 100;
     }
 
@@ -184,6 +184,7 @@
         font-weight: 600;
         font-size: 18px;
         text-decoration: none;
+        color: #FFFFFF;
     }
 
     .nav ul {
@@ -199,6 +200,7 @@
         font-weight: 500;
         padding: var(--space-xs) 0;
         position: relative;
+        color: #FFFFFF;
     }
 
     .nav a:hover {
@@ -212,7 +214,7 @@
         height: 1px;
         bottom: 0;
         left: 0;
-        background-color: var(--text);
+        background-color: #FFFFFF;
         transition: width 0.2s ease;
     }
 
@@ -226,6 +228,17 @@
         background: var(--bg);
         color: var(--text);
         text-align: left;
+        position: relative;
+        min-height: 80vh;
+    }
+
+    #vanta-hero {
+        position: relative;
+    }
+
+    #vanta-hero .container {
+        position: relative;
+        z-index: 2;
     }
 
     .eyebrow {
@@ -235,13 +248,14 @@
         font-weight: 600;
         opacity: 0.9;
         margin-bottom: var(--space-sm);
+        color: #f9dbbd;
     }
 
     .headline {
         margin-bottom: var(--space-lg);
         font-weight: 700;
         max-width: 800px;
-        color: var(--text);
+        color: #a53860;
     }
 
     .subhead {
@@ -249,10 +263,36 @@
         line-height: 1.5;
         max-width: 600px;
         opacity: 0.95;
+        color: #da627d;
     }
 
     .hero-intro {
         margin-bottom: var(--space-lg);
+    }
+
+    /* ===== HERO ACCENT STYLES ===== */
+    .complex-systems {
+        border: 2px solid #e8d6cb;
+        border-radius: 50px;
+        padding: 4px 16px;
+        display: inline-block;
+        color: #a53860;
+        background-color: rgba(86, 152, 230, 0.15);
+        font-weight: 700;
+    }
+
+    .make-sense {
+        border-bottom: 3px solid #f9dbbd;
+        display: inline;
+        padding-bottom: 2px;
+    }
+
+    .teal-text {
+        color: #f9dbbd;
+    }
+
+    .lavender-text {
+        color: #a53860;
     }
 
     /* ===== TILE GRID ===== */
@@ -431,8 +471,8 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background: var(--text);
-        color: var(--bg);
+        background: #FFFFFF;
+        color: #0F0F0F;
         width: 48px;
         height: 48px;
         border: none;
@@ -571,13 +611,13 @@
   </header>
 
   <main id="main">
-    <section class="section hero">
+    <section class="section hero" id="vanta-hero">
       <div class="container">
         <p class="eyebrow">Content Designer</p>
-        <h1 class="headline">I turn complex systems into interfaces that make sense on the first try.</h1>
+        <h1 class="headline">I turn <span class="complex-systems">complex systems</span> into interfaces that <span class="make-sense">make sense on the first try</span>.</h1>
         <p class="subhead hero-intro">
-          I'm <strong>Ishita</strong>, a designer and writer focused on content-first experiences and
-          calm, accessible UX. Currently at <em>TikTok</em>.
+          <span class="teal-text">I'm <strong>Ishita</strong>, a designer and writer focused on content-first experiences and
+          calm, accessible UX.</span> <span class="lavender-text">Currently at <em>TikTok</em>.</span>
         </p>
       </div>
     </section>
@@ -688,8 +728,34 @@
 
   <a href="#top" class="back-to-top-icon" aria-label="Back to top">↑</a>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // ===== CUSTOMIZATION SETTINGS =====
+    const WAVE_COLOR = 0x20202;          // Wave color (hex number format)
+    const WAVE_BACKGROUND = 0x0F0F0F;    // Background color (hex number format)
+    const WAVE_SHININESS = 30.00;        // Wave shininess/reflection (0 - 100, default: 30)
+    const WAVE_WAVEHEIGHT = 20.00;       // Height of waves (0 - 40, default: 20)
+    const WAVE_SPEED = 1.00;             // Animation speed (0.1 - 3.0, default: 1.0)
+    
+    // Vanta.js Waves Animation
+    VANTA.WAVES({
+      el: "#vanta-hero",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: WAVE_COLOR,
+      backgroundColor: WAVE_BACKGROUND,
+      shininess: WAVE_SHININESS,
+      waveHeight: WAVE_WAVEHEIGHT,
+      waveSpeed: WAVE_SPEED
+    })
   </script>
 </body>
 </html>
