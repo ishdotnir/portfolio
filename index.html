@@ -761,7 +761,7 @@
             <a class="tile" href="intuit.html">
               <img src="Untitled design (2).png" alt="Creator Tools" style="width:100%; height:100%; object-fit:cover;">
               <div class="tile-hover">
-                <h3>eSignature</h3>
+                <h3>Intuit</h3>
                 <p>2024</p>
               </div>
             </a>
@@ -876,10 +876,28 @@
     const passwordOverlay = document.getElementById('passwordOverlay');
     const protectedContent = document.getElementById('protectedContent');
 
+    // Check if user is already authenticated
+    function isAuthenticated() {
+      const authData = {};
+      document.cookie.split(';').forEach(cookie => {
+        const [key, value] = cookie.trim().split('=');
+        authData[key] = value;
+      });
+      return authData['portfolio_auth'] === 'true';
+    }
+
+    // Set authentication cookie
+    function setAuthCookie() {
+      const expiryDate = new Date();
+      expiryDate.setTime(expiryDate.getTime() + (24 * 60 * 60 * 1000)); // 24 hours
+      document.cookie = `portfolio_auth=true; expires=${expiryDate.toUTCString()}; path=/`;
+    }
+
     function checkPassword() {
       const enteredPassword = passwordInput.value;
       
       if (enteredPassword === correctPassword) {
+        setAuthCookie();
         passwordOverlay.classList.add('hidden');
         protectedContent.classList.add('unlocked');
         
@@ -906,9 +924,15 @@
       }
     });
 
-    // Focus on password input when page loads
+    // Check authentication on page load
     window.addEventListener('load', () => {
-      passwordInput.focus();
+      if (isAuthenticated()) {
+        passwordOverlay.classList.add('hidden');
+        protectedContent.classList.add('unlocked');
+        initVanta();
+      } else {
+        passwordInput.focus();
+      }
     });
 
     // Initialize Vanta.js
