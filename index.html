@@ -7,19 +7,7 @@
   <meta name="description" content="Portfolio of Ishita Nirbhavne, a content designer focused on clear, human-centered interfaces." />
 
  <!-- SVG optional, PNG fallbacks -->
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
-
-<!-- Classic ICO -->
-<link rel="shortcut icon" href="/favicon.ico">
-
-<!-- Apple Touch -->
-<link rel="apple-touch-icon" href="/favicon-1024.png">
-<meta name="apple-mobile-web-app-title" content="Ishita">
+<link rel="icon" href="favicon.png">
 
 <!-- Fonts -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -463,34 +451,34 @@
   padding: 1px 2px;               /* micro expansion */
 }
 
-
+/* ===== Figma-style Tight Underline ===== */
 .make-sense {
   position: relative;
-  display: inline-block;     /* needed for precise underline placement */
-  line-height: 1.15;
-  padding-bottom: 1px;       /* minimal breathing room */
-  color: #E6E6E6;            /* matches your calmer palette */
+  display: inline-block;
+  padding: 0;                  /* no extra padding */
+  line-height: 1.1;            /* tightens text box */
 }
 
-/* Thin underline to match complex-systems border */
+/* the underline graphic */
 .make-sense::after {
   content: "";
   position: absolute;
   left: 0;
-  width: 100%;
-  height: 1px;               /* thinner underline */
-  bottom: 0;
-  background-color: #18A0FB; /* same Figma blue as complex-systems */
+  right: 0;
+
+  bottom: -2px;                /* ← key: bring underline closer */
+  height: 2px;                 /* thin like Figma */
+  background: #18A0FB;         /* Figma blue */
+  border-radius: 1px;
   opacity: 0.9;
 
-  /* micro-animation */
-  transform: scaleX(1);
-  transform-origin: left;
-  transition: transform 0.18s ease, opacity 0.18s ease;
+  transform: translateY(0);
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
+/* Hover animation: tiny Figma-esque shift */
 .make-sense:hover::after {
-  transform: scaleX(1.04);   /* tiny, Figma-like hover wiggle */
+  transform: translateY(1px);   /* micro-movement */
   opacity: 1;
 }
 
