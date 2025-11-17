@@ -428,19 +428,71 @@
     }
 
     /* ===== HERO ACCENT STYLES ===== */
-    .complex-systems {
-        color: #AB274F;
-        font-weight: 700;
-    }
+    
+/* ===== Figma Hug-Contents Outline (Pixel-Perfect) ===== */
+.complex-systems {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    .make-sense {
-        display: inline;
-        padding-bottom: 2px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 30'%3E%3Cpath d='M0,15 Q25,5 50,15 T100,15 T150,15 T200,15 T250,15 T300,15 T350,15 T400,15 T450,15 T500,15' stroke='%23AB274F' stroke-width='6' fill='none'/%3E%3C/svg%3E");
-        background-repeat: repeat-x;
-        background-position: 0 100%;
-        background-size: auto 15px;
-    }
+  padding: 0;                     /* removes container padding */
+  border: 1px solid #18A0FB;
+  border-radius: 4px;
+  background: transparent;
+
+  color: #D6DBE0;
+  font-weight: 700;
+
+  line-height: 1;                 /* SUPER IMPORTANT — removes default top/bottom */
+  font-size: inherit;             /* inherits beautifully without shifting */
+
+  /* Prevent font padding inside glyph box */
+  margin-top: -1px;               /* optional micro fix */
+  margin-bottom: -1px;            /* optional micro fix */
+
+  /* subtle animation */
+  transition: 
+    border-color 0.12s ease,
+    border-width 0.12s ease,
+    padding 0.12s ease;
+}
+
+.complex-systems:hover {
+  border-width: 2px;
+  border-color: #1EA7FD;
+  padding: 1px 2px;               /* micro expansion */
+}
+
+
+.make-sense {
+  position: relative;
+  display: inline-block;     /* needed for precise underline placement */
+  line-height: 1.15;
+  padding-bottom: 1px;       /* minimal breathing room */
+  color: #E6E6E6;            /* matches your calmer palette */
+}
+
+/* Thin underline to match complex-systems border */
+.make-sense::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;               /* thinner underline */
+  bottom: 0;
+  background-color: #18A0FB; /* same Figma blue as complex-systems */
+  opacity: 0.9;
+
+  /* micro-animation */
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.make-sense:hover::after {
+  transform: scaleX(1.04);   /* tiny, Figma-like hover wiggle */
+  opacity: 1;
+}
 
     .teal-text {
         color: #fbfefb;
@@ -793,7 +845,7 @@
     <!-- NEW: Resume Download Icon -->
     <li class="nav-download">
       <a 
-        href="Ishita Nirbhavne.pdf" 
+        href="Ishita Nirbhavne portfolio.pdf" 
         download 
         aria-label="Download résumé"
         data-tooltip="Download résumé"
