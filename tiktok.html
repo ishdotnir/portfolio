@@ -82,6 +82,26 @@
       height: 24px;
     }
 
+    /* Ensure hero content is above Vanta background */
+    #hero-vanta {
+      position: relative;
+    }
+
+    #hero-vanta .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* TikTok title color */
+    .headline {
+      color: #000000 !important;
+    }
+
+    .headline .storytelling,
+    .headline .ui {
+      color: #000000 !important;
+    }
+
     @media (max-width: 640px) {
       .back-to-top-icon {
         bottom: 16px;
@@ -137,8 +157,8 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="section case-hero">
+    <!-- Hero with Vanta Waves -->
+    <section class="section case-hero" id="hero-vanta">
       <div class="container narrow">
         <p class="eyebrow reveal">TikTok</p>
         <h1 class="headline reveal reveal-up">
@@ -308,7 +328,28 @@
 
   <a href="#top" class="back-to-top-icon" aria-label="Back to top">↑</a>
 
+  <!-- Three.js and Vanta.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  
   <script>
+    // Initialize Vanta Waves on hero
+    VANTA.WAVES({
+      el: "#hero-vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xE10543,
+      shininess: 29.00,
+      waveHeight: 20.00,
+      waveSpeed: 0.75,
+      zoom: 0.65
+    });
+
     // Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
