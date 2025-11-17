@@ -6,7 +6,13 @@
   <title>Ishita Nirbhavne — Content Designer</title>
   <meta name="description" content="Portfolio of Ishita Nirbhavne, a content designer focused on clear, human-centered interfaces." />
 
-  <!-- Fonts -->
+  <!-- Favicon -->
+<link rel="icon" type="image/png" href="Firefly_Gemini Flash_small star icon with gentle twinkle animation, subtle movement, kawaii-minimal style, 395581.png">
+<link rel="shortcut icon" type="image/png" href="Firefly_Gemini Flash_small star icon with gentle twinkle animation, subtle movement, kawaii-minimal style, 395581.png">
+<link rel="apple-touch-icon" href="Firefly_Gemini Flash_small star icon with gentle twinkle animation, subtle movement, kawaii-minimal style, 395581.png">
+<link rel="icon" type="image/png" sizes="192x192" href="Firefly_Gemini Flash_small star icon with gentle twinkle animation, subtle movement, kawaii-minimal style, 395581.png">
+
+<!-- Fonts -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4,5,6,7&display=swap">
   <link rel="preconnect" href="https://rsms.me/" crossorigin>
@@ -315,6 +321,54 @@
     .nav a:hover::after {
         width: 100%;
     }
+/* ===== NAV DOWNLOAD ICON ===== */
+.nav-download a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px; /* matches nav text height visually */
+    padding: var(--space-xs) 0;
+    position: relative;
+    text-decoration: none;
+    color: #FFFFFF;
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.nav-download svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+}
+
+/* Hover */
+.nav-download a:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* Tooltip */
+.nav-download a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 6px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-download a:hover[data-tooltip]::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(2px);
+}
 
     /* ===== HERO SECTION ===== */
     .hero {
@@ -726,10 +780,28 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#playground">Playground</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+
+    <!-- NEW: Resume Download Icon -->
+    <li class="nav-download">
+      <a 
+        href="Ishita Nirbhavne.pdf" 
+        download 
+        aria-label="Download résumé"
+        data-tooltip="Download résumé"
+      >
+        <!-- download icon -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" 
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+</header>
 
     <main id="main">
       <section class="section hero" id="vanta-hero">

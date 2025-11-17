@@ -424,3 +424,50 @@
       scroll-behavior: auto;
     }
   }
+  /* ===== NAV DOWNLOAD ICON ===== */
+.nav-download a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 6px 0;
+    position: relative;
+    text-decoration: none;
+    color: #FFFFFF;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+}
+
+.nav-download svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+}
+
+.nav-download a:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* Tooltip */
+.nav-download a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 6px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-download a:hover[data-tooltip]::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(2px);
+}
