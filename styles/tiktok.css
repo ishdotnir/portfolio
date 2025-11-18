@@ -236,7 +236,7 @@
     margin-bottom: var(--space-lg);
     font-weight: 700;
     max-width: 800px;
-    color: var(--text);
+    color: #00BAD0;
   }
   
   .storytelling {
@@ -245,13 +245,6 @@
   
   .ui {
     color: #00BAD0;
-  }
-  
-  .subhead {
-    font-size: clamp(16px, 2vw, 20px);
-    line-height: 1.5;
-    max-width: 600px;
-    opacity: 0.95;
   }
   
   /* ===== GIF GALLERY (TIKTOK VIDEO FORMAT) ===== */
